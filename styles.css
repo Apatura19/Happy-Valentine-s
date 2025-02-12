@@ -1,0 +1,463 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* General Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    overflow: hidden;
+    animation: backgroundChange 6s infinite alternate;
+    background: linear-gradient(to right, #d8b4fe, #f472b6);
+}
+
+/* Background Color Animation */
+@keyframes backgroundChange {
+    0% { background: #d8b4fe; }
+    50% { background: #f472b6; }
+    100% { background: #ec4899; }
+}
+
+/* Card Styling */
+.card {
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(135deg, #fff0f6, #f8bbd0);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    z-index: 10;
+    border: 4px solid #ec4899;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.5);
+}
+
+/* Title Styling */
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ec4899;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+    margin-bottom: 10px;
+}
+
+/* Short Message Below Title */
+.message-short {
+    font-size: 20px;
+    color: #2f0236;
+    margin-bottom: 20px;
+    
+    font-family: 'Dancing Script', cursive; /* Updated to match the title */
+}
+
+
+
+/* Clickable Heart */
+.heart {
+    font-size: 90px;
+    color: #ec4899;
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+    animation: heartbeat 1.5s infinite alternate;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.heart:hover {
+    transform: scale(1.2);
+}
+
+/* Heartbeat Animation */
+@keyframes heartbeat {
+    from { transform: scale(1); }
+    to { transform: scale(1.3); }
+}
+
+/* Floating Hearts */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart-floating {
+    position: absolute;
+    bottom: -10%;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    opacity: 0.7;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+    animation: floatUp 6s infinite ease-in-out;
+}
+
+.heart-floating:nth-child(1) { left: 10%; animation-duration: 4s; }
+.heart-floating:nth-child(2) { left: 20%; animation-duration: 5s; }
+.heart-floating:nth-child(3) { left: 30%; animation-duration: 6.5s; }
+.heart-floating:nth-child(4) { left: 40%; animation-duration: 6.s; }
+.heart-floating:nth-child(5) { left: 50%; animation-duration: 7s; }
+.heart-floating:nth-child(6) { left: 60%; animation-duration: 5s; }
+.heart-floating:nth-child(7) { left: 70%; animation-duration: 5.5s; }
+.heart-floating:nth-child(8) { left: 85%; animation-duration: 6.8s; }
+.heart-floating:nth-child(9) { left: 90%; animation-duration: 8s; }
+.heart-floating:nth-child(10) { left: 40%; animation-duration: 7.2s; }
+
+.heart-floating:nth-child(11) { left: 5%; animation-duration: 11s; }
+.heart-floating:nth-child(12) { left: 15%; animation-duration: 10s; }
+.heart-floating:nth-child(11) { left: 25%; animation-duration: 12s; }
+.heart-floating:nth-child(11) { left: 35%; animation-duration: 10.5s; }
+.heart-floating:nth-child(11) { left: 45%; animation-duration: 8s; }
+.heart-floating:nth-child(11) { left: 55%; animation-duration: 15s; }
+.heart-floating:nth-child(11) { left: 65%; animation-duration: 11s; }
+.heart-floating:nth-child(11) { left: 75%; animation-duration: 12s; }
+.heart-floating:nth-child(11) { left: 80%; animation-duration: 11.5s; }
+.heart-floating:nth-child(11) { left: 95%; animation-duration: 13s; }
+.heart-floating:nth-child(11) { left: 99%; animation-duration: 15s; }
+
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+/* Confetti Animation */
+.confetti-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: pink;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: confettiFall linear infinite;
+}
+
+@keyframes confettiFall {
+    0% { transform: translateY(-10vh) rotate(0); }
+    100% { transform: translateY(100vh) rotate(720deg); }
+}
+/* Flower Decoration at Bottom */
+.flower-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Flower Styling */
+.flower {
+    width: 50px; /* Adjust size if needed */
+    height: 50px;
+    background-image: url('https://png.pngtree.com/png-clipart/20221014/original/pngtree-tulip-flower-vector-png-image_8686339.png'); /* Replace with the correct path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 10px;
+    animation: sway 3s infinite ease-in-out, glow 3s infinite alternate;
+}
+
+/* Positioning for 14 flowers */
+.flower:nth-child(1) { left: 2%; animation-duration: 3s, 3s; }
+.flower:nth-child(2) { left: 9%; animation-duration: 4s, 3.5s; }
+.flower:nth-child(3) { left: 16%; animation-duration: 3.5s, 4s; }
+.flower:nth-child(4) { left: 23%; animation-duration: 3.8s, 3.2s; }
+.flower:nth-child(5) { left: 30%; animation-duration: 4.2s, 3.8s; }
+.flower:nth-child(6) { left: 37%; animation-duration: 3.6s, 4.5s; }
+.flower:nth-child(7) { left: 44%; animation-duration: 3.2s, 3.7s; }
+.flower:nth-child(8) { left: 51%; animation-duration: 4s, 4.1s; }
+.flower:nth-child(9) { left: 58%; animation-duration: 3.5s, 4.3s; }
+.flower:nth-child(10) { left: 65%; animation-duration: 3.8s, 3.6s; }
+.flower:nth-child(11) { left: 72%; animation-duration: 4.2s, 3.9s; }
+.flower:nth-child(12) { left: 79%; animation-duration: 3.6s, 4.5s; }
+.flower:nth-child(13) { left: 86%; animation-duration: 3.2s, 3.7s; }
+.flower:nth-child(14) { left: 93%; animation-duration: 4s, 4.1s; }
+
+/* Swaying Animation */
+@keyframes sway {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Soft Glowing Effect */
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.6)); }
+    100% { filter: drop-shadow(0 0 12px rgba(236, 72, 153, 1)); }
+}
+/* Floating Hearts - Same as on main card */
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart-floating {
+    position: absolute;
+    bottom: -10%;
+    width: 20px;
+    height: 20px;
+    background: #ff69b4;
+    opacity: 0.7;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+    animation: floatUp 6s infinite ease-in-out;
+}
+
+.heart-floating:nth-child(1) { left: 10%; animation-duration: 5s; }
+.heart-floating:nth-child(2) { left: 30%; animation-duration: 6.5s; }
+.heart-floating:nth-child(3) { left: 50%; animation-duration: 7s; }
+.heart-floating:nth-child(4) { left: 70%; animation-duration: 5.5s; }
+.heart-floating:nth-child(5) { left: 85%; animation-duration: 6.8s; }
+.heart-floating:nth-child(6) { left: 90%; animation-duration: 8s; }
+.heart-floating:nth-child(7) { left: 40%; animation-duration: 7.2s; }
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Flower Styling - Same as main card */
+.flower-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Flower Styling */
+.flower {
+    width: 50px;
+    height: 50px;
+    background-image: url('https://png.pngtree.com/png-clipart/20221014/original/pngtree-tulip-flower-vector-png-image_8686339.png'); /* Replace with the correct path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 10px;
+    animation: sway 3s infinite ease-in-out, glow 3s infinite alternate;
+}
+
+/* Positioning for 14 flowers */
+.flower:nth-child(1) { left: 2%; animation-duration: 3s, 3s; }
+.flower:nth-child(2) { left: 9%; animation-duration: 4s, 3.5s; }
+.flower:nth-child(3) { left: 16%; animation-duration: 3.5s, 4s; }
+.flower:nth-child(4) { left: 23%; animation-duration: 3.8s, 3.2s; }
+.flower:nth-child(5) { left: 30%; animation-duration: 4.2s, 3.8s; }
+.flower:nth-child(6) { left: 37%; animation-duration: 3.6s, 4.5s; }
+.flower:nth-child(7) { left: 44%; animation-duration: 3.2s, 3.7s; }
+.flower:nth-child(8) { left: 51%; animation-duration: 4s, 4.1s; }
+.flower:nth-child(9) { left: 58%; animation-duration: 3.5s, 4.3s; }
+.flower:nth-child(10) { left: 65%; animation-duration: 3.8s, 3.6s; }
+.flower:nth-child(11) { left: 72%; animation-duration: 4.2s, 3.9s; }
+.flower:nth-child(12) { left: 79%; animation-duration: 3.6s, 4.5s; }
+.flower:nth-child(13) { left: 86%; animation-duration: 3.2s, 3.7s; }
+.flower:nth-child(14) { left: 93%; animation-duration: 4s, 4.1s; }
+
+@keyframes sway {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Soft Glowing Effect */
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.6)); }
+    100% { filter: drop-shadow(0 0 12px rgba(236, 72, 153, 1)); }
+}
+/* General Body Styling for Special Message */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Dancing Script', cursive;
+    margin: 0;
+    overflow: hidden;
+    animation: backgroundChange 6s infinite alternate;
+    background: linear-gradient(to right, #d8b4fe, #f472b6);
+}
+
+/* Card Styling (updated to be more rectangular and responsive) */
+.card.message-card {
+    width: 100%; /* Full width */
+    max-width: 600px; /* Max width to keep it reasonable */
+    height: auto; /* Height adjusts based on content */
+    background: linear-gradient(135deg, #fff0f6, #f8bbd0);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 40px; /* Adjusted padding */
+    position: relative;
+    z-index: 10;
+    border: 4px solid #ec4899;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden; /* Hide the scroll */
+}
+
+/* Title Styling */
+.title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ec4899;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.6);
+    margin-bottom: 20px;
+}
+
+/* Message Text Styling */
+.message-text {
+    font-size: 24px;
+    color: #2f0236;
+    text-shadow: 0 0 10px #ec4899;
+    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive; /* Same as title */
+    text-align: center;
+    word-wrap: break-word; /* Ensure long words break within the box */
+    line-height: 1.5; /* Adjusted line height for readability */
+}
+
+/* Flower Container (Outside the Card) */
+.flower-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px; /* Adjust height to fit flowers */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 20px;
+    z-index: 5;
+}
+
+/* Flower Styling */
+.flower {
+    width: 40px; /* Adjust size if needed */
+    height: 40px;
+    background-image: url('https://png.pngtree.com/png-clipart/20221014/original/pngtree-tulip-flower-vector-png-image_8686339.png'); /* Replace with the correct path */
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    bottom: 10px;
+    animation: sway 3s infinite ease-in-out, glow 3s infinite alternate;
+}
+
+/* Positioning for 14 flowers */
+.flower:nth-child(1) { left: 2%; animation-duration: 3s, 3s; }
+.flower:nth-child(2) { left: 9%; animation-duration: 4s, 3.5s; }
+.flower:nth-child(3) { left: 16%; animation-duration: 3.5s, 4s; }
+.flower:nth-child(4) { left: 23%; animation-duration: 3.8s, 3.2s; }
+.flower:nth-child(5) { left: 30%; animation-duration: 4.2s, 3.8s; }
+.flower:nth-child(6) { left: 37%; animation-duration: 3.6s, 4.5s; }
+.flower:nth-child(7) { left: 44%; animation-duration: 3.2s, 3.7s; }
+.flower:nth-child(8) { left: 51%; animation-duration: 4s, 4.1s; }
+.flower:nth-child(9) { left: 58%; animation-duration: 3.5s, 4.3s; }
+.flower:nth-child(10) { left: 65%; animation-duration: 3.8s, 3.6s; }
+.flower:nth-child(11) { left: 72%; animation-duration: 4.2s, 3.9s; }
+.flower:nth-child(12) { left: 79%; animation-duration: 3.6s, 4.5s; }
+.flower:nth-child(13) { left: 86%; animation-duration: 3.2s, 3.7s; }
+.flower:nth-child(14) { left: 93%; animation-duration: 4s, 4.1s; }
+
+/* Swaying Animation */
+@keyframes sway {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(30deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Soft Glowing Effect */
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 5px rgba(236, 72, 153, 0.6)); }
+    100% { filter: drop-shadow(0 0 12px rgba(236, 72, 153, 1)); }
+}
+
+/* Background Color Animation */
+@keyframes backgroundChange {
+    0% { background: #d8b4fe; }
+    50% { background: #f472b6; }
+    100% { background: #ec4899; }
+}
+/* Floating Images */
+.image-floating {
+    position: absolute;
+    bottom: -10%;
+    width: 100px; /* Adjust the image size */
+    height: 100px;
+    opacity: 0.7;
+    animation: floatUp 10s infinite ease-in-out;
+}
+
+.image-floating img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.image-floating:nth-child(4) { left: 15%; animation-duration: 7s; }
+.image-floating:nth-child(5) { left: 30%; animation-duration: 6s; }
+.image-floating:nth-child(6) { right: 1%; animation-duration: 7s; }
+.image-floating:nth-child(7) { left: 20%; animation-duration: 5.5s; }
+.image-floating:nth-child(8) { left: 1%; animation-duration: 4.5s; }
+.image-floating:nth-child(9) { right: 15%; animation-duration: 4s; }
+.image-floating:nth-child(10) { left: 40%; animation-duration: 5s; }
+.image-floating:nth-child(11) { right: 6%; animation-duration: 8s; }
+.image-floating:nth-child(12) { left: 10%; animation-duration: 9s; }
+.image-floating:nth-child(13) { right: 20%; animation-duration: 6s; }
+
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}

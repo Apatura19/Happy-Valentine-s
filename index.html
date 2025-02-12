@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Card</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        <div class="heart-floating">💜</div>
+        
+    </div>
+
+    <div class="card">
+        <h2>Happy Valentine's Day</h2>
+        <h2>My Love</h2>
+        <p class="message-short">You're truly special, today and always!</p>
+        <div class="heart" onclick="triggerConfetti(); openMessagePage()">❤</div>
+    </div>
+
+    <div class="flower-container">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+    </div>
+    
+
+    <script src="confetti.js"></script>
+    <script>
+        function openMessagePage() {
+            setTimeout(() => {
+                window.location.href = 'message.html';
+            }, 1500); // Delay for effect
+        }
+    </script>
+</body>
+
+</html>
